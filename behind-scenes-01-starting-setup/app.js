@@ -13,6 +13,18 @@ const app = Vue.createApp({
       this.message = this.currentUserInput;
     },
   },
+  beforeCreate() {
+    console.log('beforeCreated')
+  },
+  created(){
+    console.log('created')
+  },
+  beforeMount(){
+    console.log('beforeMount')
+  },
+  mounted(){
+    console.log('mounted')
+  },
 });
 
 app.mount('#app');

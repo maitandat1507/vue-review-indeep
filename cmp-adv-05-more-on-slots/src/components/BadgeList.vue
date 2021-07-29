@@ -12,8 +12,37 @@
         </ul>
       </template>
     </base-card>
+    <base-card>
+      <button @click="selectCmp('Tab1')">Tab 1</button>
+      <button @click="selectCmp('Tab2')">Tab 2</button>
+      <keep-alive>
+        <component :is="selectedCmp"></component>
+      </keep-alive>
+    </base-card>
   </section>
 </template>
+
+<script>
+import Tab1 from './tab/Tab1.vue';
+import Tab2 from './tab/Tab2.vue';
+
+export default {
+  components: {
+    Tab1,
+    Tab2,
+  },
+  data() {
+    return {
+      selectedCmp: 'Tab1',
+    }
+  },
+  methods: {
+    selectCmp(cmp) {
+      this.selectedCmp = cmp
+    }
+  },
+}
+</script>
 
 <style scoped>
 section h2 {

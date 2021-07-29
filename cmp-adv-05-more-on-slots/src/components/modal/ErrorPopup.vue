@@ -18,5 +18,7 @@ dialog {
   width: 200px;
   height: 100px;
   text-align: center;
+  position: fixed;
+  top: 20vh;
 }
 </style>
